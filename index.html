@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 - Lainet</title>
+    <link rel="shortcut icon" href="assets/booboo-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <section class="welcome">
+            <h1>Welcome</h1>
+        </section>
+
+        <section class="project-info">
+            <h2><i class="bi bi-code-slash"></i> Personal Project</h2>
+            <p>
+                This is a personal project made by <strong>HTML</strong>, <strong>CSS</strong> and
+                <strong>JavaScript</strong> vanilla.
+                <br>
+                This code is not a copy from the original, just an implement from the original game, the game is to show
+                my habilities for web dev frontend.
+            </p>
+        </section>
+  <!-- Botón para abrir el juego -->
+    <button class="play-button" onclick="openGame()"> Jugar Ya</button>
+
+    <!-- Modal del juego -->
+    <div class="game-modal" id="gameModal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeGame()">&times;</button>
+            
+            <div class="game-section">
+                <div class="game-header">
+                    <h1>2048</h1>
+                    <div class="score-board">
+                        <div class="score-box">
+                            Puntos: <span id="score">0</span>
+                        </div>
+                        <div class="score-box">
+                            Mejor: <span id="bestScore">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-board" id="gameBoard">
+                    <div class="grid" id="grid"></div>
+                    <div class="game-over" id="gameOver">
+                        <h2 id="gameOverTitle">¡Juego Terminado!</h2>
+                        <button class="control-button" onclick="newGame()">Nuevo Juego</button>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button class="control-button" onclick="newGame()">Nuevo Juego</button>
+                    <button class="control-button" onclick="undoMove()" id="undoBtn">Deshacer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <section class="instructions">
+            <div class="instruction-card">
+                <h3>
+                    <i class="bi bi-list-check"></i>
+                    Game Rules
+                </h3>
+                <p>The goal is to reach the tile with the number 2048 by following these rules:</p>
+                <ul>
+                    <li>
+                        <i class="bi bi-arrow-right"></i>
+                        Combine tiles with the same number to create a new one with double the value
+                    </li>
+                    <li>
+                        <i class="bi bi-plus-circle"></i>
+                        Each move spawns a new tile (2 or 4)
+                    </li>
+                    <li>
+                        <i class="bi bi-trophy"></i>
+                        You win when you create a tile with 2048
+                    </li>
+                    <li>
+                        <i class="bi bi-x-circle"></i>
+                        You lose if no more moves are possible
+                    </li>
+                    <li>
+                        <i class="bi bi-arrow-clockwise"></i>
+                        You can keep playing after winning to reach higher numbers
+                    </li>
+                </ul>
+            </div>
+
+            <div class="instruction-card">
+                <h3>
+                    <i class="bi bi-controller"></i>
+                    How to Play
+                </h3>
+                <p>Use the arrow keys to move all the tiles:</p>
+
+                <div class="controls">
+                    <div></div>
+                    <div class="control-key">
+                        <i class="bi bi-arrow-up"></i>
+                    </div>
+                    <div></div>
+                    <div class="control-key">
+                        <i class="bi bi-arrow-left"></i>
+                    </div>
+                    <div class="control-key">
+                        <i class="bi bi-arrow-down"></i>
+                    </div>
+                    <div class="control-key">
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </div>
+
+                <ul>
+                    <li>
+                        <i class="bi bi-arrows-move"></i>
+                        All tiles move in the selected direction
+                    </li>
+                    <li>
+                        <i class="bi bi-union"></i>
+                        Matching tiles merge when they collide
+                    </li>
+                    <li>
+                        <i class="bi bi-lightbulb"></i>
+                        Plan your moves to create combo chains
+                    </li>
+                    <li>
+                        <i class="bi bi-target"></i>
+                        Keep your highest numbers in a corner
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <script src="index.js" defer></script>
+</body>
+
+</html>
