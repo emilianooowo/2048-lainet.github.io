@@ -28,42 +28,43 @@
                 my habilities for web dev frontend.
             </p>
         </section>
-  <!-- Botón para abrir el juego -->
-    <button class="play-button" onclick="openGame()"> Jugar Ya</button>
 
-    <!-- Modal del juego -->
-    <div class="game-modal" id="gameModal">
-        <div class="modal-content">
-            <button class="close-button" onclick="closeGame()">&times;</button>
-            
-            <div class="game-section">
-                <div class="game-header">
-                    <h1>2048</h1>
-                    <div class="score-board">
-                        <div class="score-box">
-                            Puntos: <span id="score">0</span>
-                        </div>
-                        <div class="score-box">
-                            Mejor: <span id="bestScore">0</span>
+        <section class="boton">
+            <button class="play-button" onclick="openGame()"> Jugar Ya</button>
+        </section>
+
+        <div class="game-modal" id="gameModal">
+            <div class="modal-content">
+                <button class="close-button" onclick="closeGame()">&times;</button>
+
+                <div class="game-section">
+                    <div class="game-header">
+                        <h1>2048</h1>
+                        <div class="score-board">
+                            <div class="score-box">
+                                Puntos: <span id="score">0</span>
+                            </div>
+                            <div class="score-box">
+                                Mejor: <span id="bestScore">0</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="game-board" id="gameBoard">
-                    <div class="grid" id="grid"></div>
-                    <div class="game-over" id="gameOver">
-                        <h2 id="gameOverTitle">¡Juego Terminado!</h2>
+                    <div class="game-board" id="gameBoard">
+                        <div class="grid" id="grid"></div>
+                        <div class="game-over" id="gameOver">
+                            <h2 id="gameOverTitle">¡Juego Terminado!</h2>
+                            <button class="control-button" onclick="newGame()">Nuevo Juego</button>
+                        </div>
+                    </div>
+
+                    <div class="game-controls">
                         <button class="control-button" onclick="newGame()">Nuevo Juego</button>
+                        <button class="control-button" onclick="undoMove()" id="undoBtn">Deshacer</button>
                     </div>
-                </div>
-
-                <div class="game-controls">
-                    <button class="control-button" onclick="newGame()">Nuevo Juego</button>
-                    <button class="control-button" onclick="undoMove()" id="undoBtn">Deshacer</button>
                 </div>
             </div>
         </div>
-    </div>
         <section class="instructions">
             <div class="instruction-card">
                 <h3>
