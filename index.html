@@ -29,42 +29,40 @@
             </p>
         </section>
 
-        <section class="boton">
-            <button class="play-button" onclick="openGame()"> Jugar Ya</button>
-        </section>
+        <div class="main-container">
+            <button class="play-button" onclick="openGame()">PLAY NOW!</button>
+        </div>
 
-        <div class="game-modal" id="gameModal">
-            <div class="modal-content">
+        <div class="lightbox" id="lightbox">
+            <div class="game-container">
                 <button class="close-button" onclick="closeGame()">&times;</button>
 
-                <div class="game-section">
-                    <div class="game-header">
-                        <h1>2048</h1>
-                        <div class="score-board">
-                            <div class="score-box">
-                                Puntos: <span id="score">0</span>
-                            </div>
-                            <div class="score-box">
-                                Mejor: <span id="bestScore">0</span>
-                            </div>
+                <div class="game-header">
+                    <h2 class="game-title">2048</h2>
+                    <div class="score-container">
+                        <div class="score-box">
+                            <div class="score-label">SCORE</div>
+                            <div class="score-value" id="score">0</div>
+                        </div>
+                        <div class="score-box">
+                            <div class="score-label">BEST</div>
+                            <div class="score-value" id="best-score">0</div>
                         </div>
                     </div>
-
-                    <div class="game-board" id="gameBoard">
-                        <div class="grid" id="grid"></div>
-                        <div class="game-over" id="gameOver">
-                            <h2 id="gameOverTitle">¡Juego Terminado!</h2>
-                            <button class="control-button" onclick="newGame()">Nuevo Juego</button>
-                        </div>
-                    </div>
-
-                    <div class="game-controls">
-                        <button class="control-button" onclick="newGame()">Nuevo Juego</button>
-                        <button class="control-button" onclick="undoMove()" id="undoBtn">Deshacer</button>
+                    <div class="controls">
+                        <button class="control-button" onclick="newGame()">New Game</button>
                     </div>
                 </div>
+
+                <div class="grid-container">
+                    <div class="grid" id="grid">
+                    </div>
+                </div>
+
+                <div class="game-message" id="game-message"></div>
             </div>
         </div>
+
         <section class="instructions">
             <div class="instruction-card">
                 <h3>
@@ -102,24 +100,6 @@
                     How to Play
                 </h3>
                 <p>Use the arrow keys to move all the tiles:</p>
-
-                <div class="controls">
-                    <div></div>
-                    <div class="control-key">
-                        <i class="bi bi-arrow-up"></i>
-                    </div>
-                    <div></div>
-                    <div class="control-key">
-                        <i class="bi bi-arrow-left"></i>
-                    </div>
-                    <div class="control-key">
-                        <i class="bi bi-arrow-down"></i>
-                    </div>
-                    <div class="control-key">
-                        <i class="bi bi-arrow-right"></i>
-                    </div>
-                </div>
-
                 <ul>
                     <li>
                         <i class="bi bi-arrows-move"></i>
